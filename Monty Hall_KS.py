@@ -29,6 +29,7 @@ With the above table, we can see that
 Result: Better chance (66.67% or 2/3 for 3 doors) of winning when you chose to swap!
 """
 import random #Library to generate a random number
+
 def MontyHall(): 
     
     #print("Enter the number of doors") 
