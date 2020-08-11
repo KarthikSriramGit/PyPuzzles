@@ -30,18 +30,24 @@ Result: Better chance (66.67% or 2/3 for 3 doors) of winning when you chose to s
 """
 import random #Library to generate a random number
 def MontyHall(): 
+    
     #print("Enter the number of doors") 
     doors = 3  #Extension possible here, while 'doors' not equal to 0.
     cars = 1   #Extension can be also made to the number of cars, while 'cars' less than 'doors' for the desired outcome.  
+    
     print("Enter the number of simulations:")
     n = int(input())  #Example n = 10000 simulations, while 'n' not equal to 0.  
     win=0  # Initialization of win
+    
     print("Enter choice '0' to always swap and '1' to always keep!")  #All other values are invalid which can be declared if necessary
     choice_keep=int(input()) #Choice entered to either always keep or always swap 
+    
     for i in range(n):
         car_chosen =  random.random() <=cars/doors #Car getting chosen in our door(default car_chosen = 0/1) has maximum probability of no.of cars/no.of doors, 1/3 if 1 car and 3 doors.
         if(car_chosen==choice_keep): #Car_chosen = 1 and choice_keep = 1 or if both are 0, it results in a win (with Swap=A from the above table). 
           win += 1
+    
     print("In ",n, "simulations, you would have won: ",win," and you would have lost:",n-win) # lost = no.of simulations - wins
     print("Probability of winning with your choice:", win/n * 100,"%") 
+
 MontyHall()
